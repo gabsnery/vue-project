@@ -1,9 +1,9 @@
 <script setup lang="ts">
-import ProductList from '../components/Product/ProductList.vue'
+import OrderList from '../components/Order/OrderList.vue'
 </script>
 
 <template>
   <main>
-    <ProductList />
+    <OrderList />
   </main>
 </template>

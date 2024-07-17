@@ -14,7 +14,6 @@ export const useProductsStore = defineStore({
   actions: {
     async fetchProducts() {
       const response = await productsService.getProducts()
-      console.log('🚀 ~ fetchProducts ~ response:', response)
       this.products = response.data
     }
   },

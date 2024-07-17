@@ -6,10 +6,9 @@ import type { AuthResponse, LoginData } from '@/services/auth/auth.interface'
 export const useAuthStore = defineStore('auth', () => {
   const token = ref<string | null>(localStorage.getItem('token'))
   const user = ref<AuthResponse['email'] | null>(
-    token.value ? JSON.parse(localStorage.getItem('email')!) : null
+    token.value ? localStorage.getItem('email')! : null
   )
   const error = ref<string | null>(null)
-  console.log("🚀 ~ useAuthStore ~ localStorage.getItem('email'):", localStorage.getItem('email'))
 
   async function login(data: LoginData) {
     try {
