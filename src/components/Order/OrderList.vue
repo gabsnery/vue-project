@@ -1,25 +1,25 @@
 <template>
   <div>
-    <h1>Products</h1>
+    <h1>Orders</h1>
     <ul>
-      <li v-for="product in products" :key="product.id">{{ product.nome }}</li>
+      <li v-for="order in orders" :key="order.id">{{ order.nome }}</li>
     </ul>
   </div>
 </template>
 
 <script lang="ts">
 import { defineComponent } from 'vue'
-import { useProductsStore } from '@/stores/product'
+import { useOrderStore } from '@/stores/order'
 
 export default defineComponent({
-  name: 'Products',
+  name: 'Orders',
   setup() {
-    const productsStore = useProductsStore()
-    productsStore.fetchProducts()
+    const ordersStore = useOrderStore()
+    ordersStore.fetchOrders()
 
-    console.log('🚀 ~ setup ~ productsStore:', productsStore)
+    console.log('🚀 ~ setup ~ productsStore:', ordersStore)
     return {
-      products: productsStore.products
+      orders: ordersStore.orders
     }
   }
 })
