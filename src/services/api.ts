@@ -2,7 +2,7 @@ import { useAuthStore } from '@/stores/auth'
 import axios from 'axios'
 
 const apiClient = axios.create({
-  baseURL: 'https://apto34-app-5f2022b3c839.herokuapp.com/',
+  baseURL: import.meta.env.VITE_API_ENDPOINT,
   headers: {
     'Content-Type': 'application/json'
   }

@@ -1,9 +1,9 @@
-import type { Product } from '@/services/product/product.interface'
+import type { IOrder } from '@/services/order/order.interface'
 import { defineStore } from 'pinia'
 import orderService from '@/services/order'
 
 interface State {
-  orders: any[]
+  orders: IOrder[]
 }
 
 export const useOrderStore = defineStore({
@@ -14,7 +14,6 @@ export const useOrderStore = defineStore({
   actions: {
     async fetchOrders() {
       const response = await orderService.getOrders()
-      console.log('🚀 ~ fetchProducts ~ response:', response)
       this.orders = response.data
     }
   },

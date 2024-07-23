@@ -29,6 +29,7 @@ export default defineComponent({
     onMounted(async () => {
       const productsStore = useProductsStore()
       await productsStore.fetchProducts()
+      console.log("🚀 ~ onMounted ~ productsStore:", productsStore)
       products.value = productsStore.products
     })
     return {

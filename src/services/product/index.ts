@@ -1,17 +1,17 @@
 import apiClient from '../api'
-import type { Product } from './product.interface'
+import type { IProduct } from './product.interface'
 
 export default {
   getProducts() {
-    return apiClient.get<Product[]>('/api/product/0/50')
+    return apiClient.get<IProduct[]>('/api/product/0/50')
   },
   getProduct(id: number) {
-    return apiClient.get<Product>(`/api/product/${id}`)
+    return apiClient.get<IProduct>(`/api/product/${id}`)
   },
-  createProduct(data: Product) {
+  createProduct(data: IProduct) {
     return apiClient.post('/api/product', data)
   },
-  updateProduct(id: number, data: Product) {
+  updateProduct(id: number, data: IProduct) {
     return apiClient.put(`/api/product/${id}`, data)
   },
   deleteProduct(id: number) {
